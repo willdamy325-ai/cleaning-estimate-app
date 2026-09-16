@@ -55,9 +55,9 @@ export function CompleteView() {
           <div className="space-y-6">
             <QuoteReceipt quote={quote} />
             <p className="text-center text-sm leading-7 text-clay">
-              この画面は依頼内容の確認用です。現段階では送信先のサーバーは接続していません。
+              ご依頼内容を保存しました。
               <br />
-              担当者からの正式なお見積・日程調整は、今後の予約管理機能でご案内します。
+              担当者が内容を確認し、入力いただいた連絡先へ正式なお見積と日程をご案内します。
             </p>
             <div className="flex justify-center">
               <Link

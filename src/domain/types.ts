@@ -44,6 +44,21 @@ export type QuoteRequest = {
   customer: CustomerInfo;
 };
 
+export const QUOTE_STATUSES = [
+  "new",
+  "contacted",
+  "confirmed",
+  "completed",
+  "cancelled",
+] as const;
+
+export type QuoteStatus = (typeof QUOTE_STATUSES)[number];
+
+export type ManagedQuoteRequest = QuoteRequest & {
+  status: QuoteStatus;
+  updatedAt: string;
+};
+
 export type QuantityMap = Record<ServiceId, number>;
 
 export const QUANTITY_MIN = 0;
