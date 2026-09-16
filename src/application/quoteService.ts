@@ -3,7 +3,7 @@ import { calculateQuote } from "@/domain/quote";
 import type { CustomerInfo, QuantityMap, QuoteRequest } from "@/domain/types";
 import { createQuoteId } from "@/infrastructure/id";
 import type { QuoteRepository } from "@/infrastructure/repositories/quoteRepository";
-import { LocalQuoteRepository } from "@/infrastructure/repositories/localQuoteRepository";
+import { ApiQuoteRepository } from "@/infrastructure/repositories/apiQuoteRepository";
 
 /**
  * アプリケーションサービス。
@@ -43,7 +43,7 @@ let singleton: QuoteService | null = null;
 
 export function getQuoteService(): QuoteService {
   if (!singleton) {
-    singleton = new QuoteService(new LocalQuoteRepository());
+    singleton = new QuoteService(new ApiQuoteRepository());
   }
   return singleton;
 }
