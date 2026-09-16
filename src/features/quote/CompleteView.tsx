@@ -15,13 +15,21 @@ export function CompleteView() {
   const [quote, setQuote] = useState<QuoteRequest | null | undefined>(undefined);
 
   useEffect(() => {
-    const id = getLastQuoteId();
-    if (!id) {
-      setQuote(null);
-      return;
+    let active = true;
+
+    async function loadQuote() {
+      const id = getLastQuoteId();
+      const repository = new LocalQuoteRepository();
+      const result = id ? await repository.findById(id) : await Promise.resolve(null);
+      if (active) {
+        setQuote(result);
+      }
     }
-    const repository = new LocalQuoteRepository();
-    void repository.findById(id).then((result) => setQuote(result));
+
+    void loadQuote();
+    return () => {
+      active = false;
+    };
   }, []);
 
   return (

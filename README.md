@@ -28,7 +28,7 @@
 
 ## 必要環境
 
-- Node.js 20 以上
+- Node.js 20.9 以上
 - npm 10 以上（Node.js に同梱）
 
 ## ローカルでの起動方法
@@ -84,7 +84,7 @@ src/
 
 ## 使っている技術
 
-- Next.js 15（App Router）
+- Next.js 16（App Router）
 - React 19
 - TypeScript
 - Tailwind CSS
