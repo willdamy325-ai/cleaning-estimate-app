@@ -101,6 +101,8 @@ export function CustomerForm({ value, errors, onChange }: CustomerFormProps) {
               <span id={`${field.id}-error`} className="mt-1 block text-xs text-red-700">
                 {errors[field.id]}
               </span>
+            ) : field.type === "date" ? (
+              <span className="mt-1 block text-xs text-clay">本日以降の日付を選択してください</span>
             ) : null}
           </label>
         ))}

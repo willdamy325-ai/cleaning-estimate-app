@@ -80,8 +80,8 @@ export function QuoteFlow() {
   return (
     <div className="min-h-dvh bg-mist text-ink">
       <Header />
-      <main className="mx-auto max-w-content px-5 pb-32 pt-8 lg:pb-16">
-        <section className="overflow-hidden rounded-[28px] border border-gold-soft bg-paper px-5 py-8 shadow-card sm:px-10">
+      <main className="mx-auto max-w-content px-5 pb-8 pt-8 lg:pb-16">
+        <section className="rounded-[28px] border border-gold-soft bg-paper px-5 py-8 shadow-card sm:px-10">
           <p className="text-[11px] tracking-[0.32em] text-gold">PROFESSIONAL HOUSE CLEANING</p>
           <h1 className="mt-3 font-serif text-[1.7rem] leading-snug text-pine-deep sm:text-4xl">
             その場で料金がわかる、
@@ -167,6 +167,7 @@ export function QuoteFlow() {
         )}
       </main>
       <Footer />
+      <div className="h-28 lg:hidden" aria-hidden="true" />
       <StickyQuoteBar
         total={quote.total}
         disabled={step === 1 ? !hasSelection : submitting}
