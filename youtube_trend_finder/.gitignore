@@ -1,0 +1,12 @@
+.env
+data/cache/*
+!data/cache/.gitkeep
+data/daily/*
+!data/daily/.gitkeep
+reports/*
+!reports/.gitkeep
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
